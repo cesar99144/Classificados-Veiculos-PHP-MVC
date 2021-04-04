@@ -1,0 +1,28 @@
+body{
+
+    
+}
+
+.card{
+
+    width: 300px;
+    margin-top: 20px;
+}
+
+.card-body{
+
+    width: 350px;
+}
+
+label#valor{
+
+    font-size: 15pt;
+}
+
+a#favoritoButton{
+
+    margin-left: 10px;
+    font-size: 14pt;
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,130 @@
+*{
+
+	margin: auto;
+}
+
+body{
+
+	background: #f2f2f2;
+}
+
+header{
+
+	background: white;
+	padding: 10px;
+	padding-bottom: 15px;
+	box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+div#topMenu{
+
+	display: flex;
+	
+}
+
+div#colunaLogo{
+
+	margin-top: 30px;
+}
+
+nav#linksTop ul{
+
+	
+}
+
+nav#linksTop li{
+
+	display: inline;
+	list-style: none;
+	margin-left: 15px;
+}
+
+.textLink{
+
+	font-size: 15pt;
+	margin-left: 5px;
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+}
+
+.textLink:hover{
+
+	color: white;
+	background: black;
+	
+}
+
+.buttons-user{
+
+	font-size: 15pt;
+	margin-left: 5px;
+	text-decoration: none;
+	color: black;
+    padding: 5px;
+}
+
+.buttons-user:hover{
+
+	background: orange;
+	color: white;
+	
+}
+
+/* topo pesquisa */
+
+div#topoPesquisa{
+
+	display: flex;
+	margin-top: 10px;
+}
+
+.select-formulario{
+
+	width: 160px;
+	padding: 5px;
+	font-size: 13pt;
+	border: 2px solid #e8e8e8;
+}
+
+.input-formulario{
+
+	width: 280px;
+	padding: 5px;
+	font-size: 13pt;
+	border: 2px solid #e8e8e8;
+    
+}
+
+button#input-submit{
+
+	padding: 7px;
+	background: #7c35d1;
+	border: none;
+	margin-left: -3px;
+	font-size: 13pt;
+	width: 60px;
+	border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+a#button-criarAnuncio{
+
+	font-size: 15pt;
+	margin-left: 5px;
+	text-decoration: none;
+	background: #ff8300;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+}
+
+/* Conteudo */
+
+section#conteudo{
+
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
