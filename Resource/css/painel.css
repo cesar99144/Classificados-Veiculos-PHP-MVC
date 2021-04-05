@@ -22,9 +22,15 @@ div#topMenu{
 	
 }
 
+img#logomarca{
+
+	max-width: 120px;
+	max-height: 120px;
+}
+
 div#colunaLogo{
 
-	margin-top: 30px;
+	margin-top: 5px;
 }
 
 nav#linksTop ul{
