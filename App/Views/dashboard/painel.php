@@ -15,16 +15,18 @@
 	<header>
 		<div id="topMenu">
 			<div id="colunaLogo">
-				logo
+				<img id="logomarca" src="<?php echo URL_BASE; ?>Resource/images/logomarca.png" alt="">
 			</div>
 			<div class="colunaTop">
 			  	<nav id="linksTop">
 			  		<ul>
 			  		  <li><i class="fas fa-home"></i><a class="textLink" href="<?php echo URL_BASE; ?>veiculos/home">Home</a></li>
-			  		  <li><i class="fas fa-images"></i><a class="textLink" href="#">Anuncios</a></li>
+			  		  <li><i class="fas fa-images"></i><a class="textLink" href="<?php echo URL_BASE; ?>anuncios/geral">Anúncios gerais</a></li>
+					  <!-- Se tiver logado opções são liberadas -->
 					  <?php if(isset($_SESSION['logado'])): ?>
-			  		 	<li><i class="far fa-id-badge"></i><a class="textLink" href="">Perfil</a></li>
+			  		 	<li><i class="far fa-id-badge"></i><a class="textLink" href="<?php echo URL_BASE; ?>anuncios/perfil">Meu perfil</a></li>
 						<li><i class="fas fa-bookmark"></i><a class="textLink" href="">Favoritos</a></li>
+						<li><i class="fas fa-plus"></i><a class="textLink" href="<?php echo URL_BASE; ?>anuncios/criarAnuncio">Criar anúncio</a></li>
 					  <?php endif; ?>
 			  		  <li><i class="fas fa-phone-volume"></i><a class="textLink" href="">Contatos</a></li>
 			  		</ul>
@@ -35,7 +37,7 @@
 					<label for="">Olá,  <?php echo $_SESSION['userNome']; ?></label>
 					<a href="<?php echo URL_BASE; ?>usuarios/logout">Logout</a>
 				<?php else: ?>
-					<i class="fas fa-user-alt"></i> <a class="buttons-user" href="#">Login</a> /<a class="buttons-user" href="#">Criar conta</a>
+					<i class="fas fa-user-alt"></i> <a class="buttons-user" href="<?php echo URL_BASE; ?>usuarios/login">Login</a> /<a class="buttons-user" href="<?php echo URL_BASE; ?>usuarios/cadastro">Criar conta</a>
 				<?php endif; ?>
 			</div>
 			

@@ -20,12 +20,14 @@
                      </div>
                      <!-- END profile-header-img -->
                      <!-- BEGIN profile-header-info -->
+                     <?php foreach($data['listUser'] as $usuario): ?> 
                      <div class="profile-header-info">
-                        <h4 class="m-t-10 m-b-5"><?php echo $_SESSION['userNome'].' '.$_SESSION['userSobreNome']; ?></h4>
-                        <p class="m-b-10"><?php echo $_SESSION['userCidade'].', '.$_SESSION['userEstado']; ?></p>
-                        <p class="m-b-10">Cadastro realizado: <?php echo $_SESSION['userDataCadastro']. ' | '.$_SESSION['userEmail']; ?></p>
-                        <a href="#" class="btn btn-sm btn-info mb-2">Editar perfil</a>
+                        <h4 class="m-t-10 m-b-5"><?php echo $usuario['nome'].' '.$usuario['sobrenome']; ?></h4>
+                        <p class="m-b-10"><?php echo $usuario['cidade'].', '. $usuario['uf']; ?></p>
+                        <p class="m-b-10">Cadastro realizado: <?php echo $usuario['dataCadastro']. ' | '.$usuario['email']; ?></p>
+                        
                      </div>
+                        <?php endforeach; ?>
                      <!-- END profile-header-info -->
                   </div>
                   <!-- END profile-header-content -->
@@ -39,7 +41,7 @@
             </div>
             <!-- end profile -->
             <div class="row">
-              <?php foreach($data['anunciosUser'] as $anuncios): ?>
+              <?php foreach($data['anuncio'] as $anuncios): ?>
                 <div class="card">
                   <img class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
                     <div class="card-body">
@@ -50,13 +52,7 @@
                         <label for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label><br>
                         <label for=""><i class="fab fa-bandcamp"></i> <?php echo $anuncios['modelo']; ?></label>
                         <label for=""><i class="fas fa-exclamation-triangle"></i> Usado</label><br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                        <?php if($anuncios['status'] == 'Aberto'): ?>
-                            <a id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/bloquearAnuncio/<?php echo $anuncios['id']; ?>" ><i class="fas fa-minus-square"></i> Desabilitar</a>
-                        <?php elseif($anuncios['status'] == 'Desativado'): ?>
-                            <a id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/liberarAnuncio/<?php echo $anuncios['id']; ?>" ><i class="fas fa-vote-yea"></i> Habilitar</a>
-                       
-                        <?php endif; ?>
+                        <a id="favoritoButton" href="#" ><i class="fas fa-bookmark"></i> Favoritar</a>
                     </div>
                 </div>
                 <?php endforeach; ?>

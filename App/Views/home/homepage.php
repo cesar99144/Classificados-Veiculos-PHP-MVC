@@ -146,11 +146,11 @@
 
                  <div class="col-lg-4 margin_top_30">
                <div class="full margin_top_30">
-                  <h3 class="main_heading _left_side margin_top_30">About Us</h3>
-                  <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod..</p>
+                  <h3 class="main_heading _left_side margin_top_30">Anuncie conosco</h3>
+                  <p class="large">Anuncie aqui para milhares de compradores e venda rápido</p>
                </div>
                <div class="full button_section margin_top_30">
-                        <a href="#">Read More</a>
+                        <a href="#">Ler mais</a>
                      </div>
             </div>
 
@@ -180,11 +180,11 @@
 
                  <div class="col-lg-4 margin_top_30">
                <div class="full margin_top_30">
-                  <h3 class="main_heading _left_side margin_top_30">Our Cars</h3>
-                  <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod..</p>
+                  <h3 class="main_heading _left_side margin_top_30">Nossos carros</h3>
+                  <p class="large">Nosso portal conta com uma grande variedade de veículos das melhores e mais diversas marcas</p>
                </div>
                <div class="full button_section margin_top_30">
-                    <a href="#">See More</a>
+                    <a href="#">Ler mais</a>
                   </div>
             </div>
 
