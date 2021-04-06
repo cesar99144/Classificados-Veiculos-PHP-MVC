@@ -117,7 +117,7 @@
                      <p>Anuncie e compre veículos de uma forma rápida, eficaz e segura.</p>
                      <div class="button_section">
                         <a id="buttonLogin" href="<?php echo URL_BASE; ?>usuarios/login">Login</a>
-                        <a href="<?php echo URL_BASE; ?>usuarios/cadastro">Cadastra-se</a>
+                        <a href="<?php echo URL_BASE; ?>usuarios/cadastro">Cadastre-se</a>
                      </div>
                   </div>
                </div>
@@ -228,7 +228,7 @@
                     <div class="choose_blog text_align_center">
                         <img src="<?php echo URL_BASE; ?>Resource/images/c3_icon.png" />
                         <h4>CONFIADO POR MILHARES</h4>
-                        <p>Contamos com usuários com perfil verificado, e </p>
+                        <p>Contamos com usuários com perfil verificado</p>
                     </div>
                  </div>
               </div>
