@@ -40,10 +40,10 @@ class App {
     public function currentURL(){
         $url = $this->parseURL();
         if($url[1] == "" AND !isset($url[2])):
-            $url[1]  = "veiculos";
-            $url[2] = "home";
+            $url[1]  = "anuncios";
+            $url[2] = "geral";
         endif;
-        return URL_BASE."/".$url[1]."/".$url[2]."/";
+        return URL_BASE.$url[1]."/".$url[2]."/";
     }
 
 }
