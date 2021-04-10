@@ -6,13 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo URL_BASE; ?>Resource/css/anuncios.css" >
     <title>Document</title>
-
+    
     
 </head>
 <body>
+
+    <?php 
+
+       //Paginação
+        $pagination = new App\Pagination($data['anuncios'], isset($_GET['page'])? $_GET['page'] : 1, 8);
+    ?>
+
+    <?php
+
+        //Mensagem de retorno caso não haja nenhum livro
+        if(empty($pagination->resultado())):
+
+          echo "<label id='textoMensagem'>Nenhum livro encontrado</label>";
+
+        endif;
+
+    ?>
     <div class="row ">
     
-        <?php foreach($data['anuncios'] as $anuncios): ?>
+        <?php foreach($pagination->resultado() as $anuncios): ?>
             <div class="card">
                 <img id="imgCapa" class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
                 <div class="card-body">
@@ -29,6 +46,13 @@
             </div>
         <?php endforeach; ?>
         </div>
+
+        <?php
+            //Exibe as quantidades de páginas
+
+             $pagination->navigator();
+
+        ?>
     
 </body>
 </html>
