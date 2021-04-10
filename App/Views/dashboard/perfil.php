@@ -46,8 +46,8 @@
                         <label id="valor" for="">R$ <?php echo $anuncios['preco']; ?></label>
                         <h4 class="card-title"><?php echo $anuncios['titulo']; ?></h4>
                         <p class="card-text"><?php echo $anuncios['descricao']; ?></p>
-                        <label for=""><i class="fas fa-tachometer-alt"></i><?php echo $anuncios['km']; ?> km</label>
-                        <label for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label><br>
+                        <!--<label for=""><i class="fas fa-tachometer-alt"></i><?php echo $anuncios['km']; ?> km</label>-->
+                        <label for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label>
                         <label for=""><i class="fab fa-bandcamp"></i> <?php echo $anuncios['modelo']; ?></label>
                         <label for=""><i class="fas fa-exclamation-triangle"></i> Usado</label><br>
                         <a href="#" class="btn btn-primary">Editar</a>

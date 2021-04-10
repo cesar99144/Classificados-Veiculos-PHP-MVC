@@ -5,14 +5,33 @@ body{
 
 .card{
 
-    width: 300px;
-    margin-top: 20px;
-    height: 500px;
+    width: 310px;
+    margin-top: 25px;
+    height: 420px;
+}
+
+.card-img-top{
+
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .card-body{
 
     width: 350px;
+    margin-top: -10px;
+    height: 300px;
+}
+
+.card-title{
+
+	font-size: 13pt;
+}
+
+.atributos{
+
+	font-size: 11pt;
+	
 }
 
 
