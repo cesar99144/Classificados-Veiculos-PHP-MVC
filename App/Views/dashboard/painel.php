@@ -64,7 +64,7 @@
 			</div>
 			<div class="colunaTop">
 			<?php if(isset($_SESSION['logado'])): ?>
-				<a id="button-criarAnuncio" href="#">Criar anuncio</a>
+				<a id="button-criarAnuncio" href="#">Criar anúncio</a>
 			<?php endif; ?>
 			</div>
 		</div>

@@ -117,7 +117,7 @@
                      <p>Anuncie e compre veículos de uma forma rápida, eficaz e segura.</p>
                      <div class="button_section">
                         <a id="buttonLogin" href="<?php echo URL_BASE; ?>usuarios/login">Login</a>
-                        <a href="<?php echo URL_BASE; ?>usuarios/cadastro">Cadastre-se</a>
+                        <a class="buttonsCenter" id="buttonSignup" href="<?php echo URL_BASE; ?>usuarios/cadastro">Cadastre-se</a>
                      </div>
                   </div>
                </div>
@@ -150,7 +150,7 @@
                   <p class="large">Anuncie aqui para milhares de compradores e venda rápido</p>
                </div>
                <div class="full button_section margin_top_30">
-                        <a href="#">Ler mais</a>
+                        <a class="buttonsCenter" href="#">Ler mais</a>
                      </div>
             </div>
 

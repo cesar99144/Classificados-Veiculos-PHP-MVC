@@ -10,11 +10,11 @@
     
 </head>
 <body>
-    <div class="row">
+    <div class="row ">
     
         <?php foreach($data['anuncios'] as $anuncios): ?>
             <div class="card">
-                <img class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
+                <img id="imgCapa" class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
                 <div class="card-body">
                     <label id="valor" for="">R$ <?php echo $anuncios['preco']; ?></label>
                     <h4 class="card-title"><?php echo $anuncios['titulo']; ?></h4>

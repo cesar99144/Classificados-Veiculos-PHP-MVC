@@ -7,12 +7,14 @@ body{
 
     width: 300px;
     margin-top: 20px;
+    height: 500px;
 }
 
 .card-body{
 
     width: 350px;
 }
+
 
 label#valor{
 

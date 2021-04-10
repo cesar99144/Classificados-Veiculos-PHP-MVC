@@ -1715,6 +1715,12 @@ input[type="radio"] .styled:checked+label::after {
 a#buttonLogin{
 
 	background: teal;
+	text-align: center;
+}
+
+.buttonsCenter{
+
+	text-align: center;
 }
 
 a#buttonBusca{
