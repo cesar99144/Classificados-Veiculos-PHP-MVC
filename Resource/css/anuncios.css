@@ -28,3 +28,32 @@ a#favoritoButton{
     text-decoration: none;
     color: black;
 }
+
+/* pagination */
+
+.pagination{
+
+	width: 300px;
+	margin-top: 30px;
+}
+
+.item{
+
+	
+	padding: 5px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	color: black;
+}
+
+.page-item{
+
+	
+
+}
+
+.active{
+
+	background: #fb7a74;
+	color: black;
+}
