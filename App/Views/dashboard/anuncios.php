@@ -29,7 +29,7 @@
             </div>
             <div class="colunaTop">
             <?php if(isset($_SESSION['logado'])): ?>
-                <a id="button-criarAnuncio" href="#">Criar anúncio</a>
+                <a id="button-criarAnuncio" href="<?php echo URL_BASE; ?>anuncios/criarAnuncio">Criar anúncio</a>
             <?php endif; ?>
             </div>
         </div>
@@ -53,9 +53,20 @@
     
         <?php foreach($pagination->resultado() as $anuncios): ?>
             <div class="card">
+                <div id="infoAnunciante">
+                    <div id="nomeAnunciante">
+                        <?php echo $anuncios['Nome']; ?>
+                    </div>
+                    <div>
+                        
+                    </div>
+                    <div id="cidadeAnunciante">
+                        <?php echo $anuncios['cidade']; ?> - <?php echo $anuncios['uf']; ?>
+                    </div>
+                </div>
                 <img id="imgCapa" class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
                 <div class="card-body">
-                    <label id="valor" for="">R$ <?php echo $anuncios['preco']; ?></label>
+                    <label id="valor" for="">R$ <?php $valor = $anuncios['preco']; echo number_format($valor,2,",","."); ?></label>
                     <h4 class="card-title"><?php echo $anuncios['titulo']; ?></h4>
                     <p class="card-text"><?php echo $anuncios['descricao']; ?></p>
                     <!--<label for=""><i class="fas fa-tachometer-alt"></i><?php echo $anuncios['km']; ?>km</label>-->
@@ -65,6 +76,7 @@
                     <div id="buttonCar">
                         <a class="btn btn-primary" href="<?php echo URL_BASE; ?>anuncios/vizualizarVeiculo/<?php echo $anuncios['id']; ?>/<?php echo $anuncios['usuarioAnunciante']; ?>">Detalhes</a>
                         <a id="favoritoButton" href="#" ><i class="fas fa-bookmark"></i> Favoritar</a>
+                        <a id="favoritoButton" onclick="abrirModal('codigo-modal', '<?php echo URL_BASE; echo 'anuncios/vizualizarVeiculo/'; echo $anuncios['id']; echo '/'; echo $anuncios['usuarioAnunciante']; ?>')" href="#" ><i class="fas fa-share-square"></i></a>
                     </div>
                 </div>
             </div>
@@ -77,6 +89,29 @@
              $pagination->navigator();
 
         ?>
+
+        <!-- Modal compartilhar código -->
+        <div id="codigo-modal" class="modal">
+            <div class="modal-conteudo">
+                <div class="modal-titulo">
+                    <h1>Compartilhar postagem</h1>
+                <div class="modal-corpo">
+
+                    <form action="https://api.whatsapp.com/send/" method="GET" target="_blank">
+
+                        <label id="share-info" for=""> Compartilhe o link: </label><br>
+                        <input id="link-Share" name="text"/><br> 
+                        <input name="phone"/><br>Ou: 
+                        <br><button type="submit" id="linkwhats"  name="enviar" type="submit"><i class="fab fa-whatsapp"> whatsapp</i></button>
+                        
+                    </form>
+                </div>
+                <div class="modal-butoes">
+                    <button class="btn" onclick="fecharModal('codigo-modal')">Cancelar</button>
+                </div>
+            </div>
+        </div>
     
+        <script src="<?php echo URL_BASE; ?>Resource/javascript/anuncios.js"></script>
 </body>
 </html>
