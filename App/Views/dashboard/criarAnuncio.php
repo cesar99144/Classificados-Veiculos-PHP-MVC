@@ -19,15 +19,15 @@
         <input type="number" class="form-control" id="km" name="km" placeholder="KM">
     </div>
     <div class="form-group col-md-6">
-        <label for="inputAddress2">Modelo</label>
-        <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Ex: FIAT, Volkswagen, peugeot">
+      <label for="inputCity">Marca</label>
+      <input type="text" class="form-control" id="marca" name="marca" placeholder="Ex: FIAT, Volkswagen, peugeot">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">Marca</label>
-      <input type="text" class="form-control" id="marca" name="marca">
-    </div>
+          <label for="inputAddress2">Modelo</label>
+          <input type="text" class="form-control" id="modelo" name="modelo">
+      </div>
     <div class="form-group col-md-3">
       <label for="inputCEP">Preço de venda:</label>
       <input type="text" class="form-control" id="preco" onchange="mascaraDinheiro()" name="preco">
