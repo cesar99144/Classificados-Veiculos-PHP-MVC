@@ -6,6 +6,10 @@ class Veiculos extends Controller{
 
     public function home(){
 
-        $this->view('home/homepage');
+         //Carrega todas as  marcas
+         $veiculosDao = $this->model('AnunciosDao');
+         $listaMarcas = $veiculosDao->listarMarcas();
+
+        $this->view('home/homepage', $dados = ['marcas' => $listaMarcas]);
     }
 }
