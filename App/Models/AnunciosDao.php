@@ -54,7 +54,7 @@ class AnunciosDao extends Conexao{
 	public function listarTodosAnuncios(){
 
 		//$query = "SELECT * FROM veiculosAnuncios WHERE status = ?";
-		$query = "SELECT i.id, i.Nome, i.sobrenome, i.cidade, i.uf, v.id, v.descricao, v.titulo, v.marca, v.modelo, v.preco, v.usuarioAnunciante, v.imagemVeiculo, v.estadoVeiculo, v.status FROM usuarios i INNER JOIN veiculosanuncios v ON v.usuarioAnunciante = i.id WHERE v.status = 'Aberto';";
+		$query = "SELECT i.id, i.Nome, i.sobrenome, i.cidade, i.uf, v.id, v.descricao, v.titulo, v.marca, v.modelo, v.preco, v.usuarioAnunciante, v.imagemVeiculo, v.estadoVeiculo, v.status FROM usuarios i INNER JOIN veiculosanuncios v ON v.usuarioAnunciante = i.id WHERE v.status = ? ORDER BY v.id DESC";
 		$stmt = Conexao::getConn()->prepare($query);
 		$stmt->bindValue(1, 'Aberto');
 		$stmt->execute();
@@ -149,7 +149,8 @@ class AnunciosDao extends Conexao{
 
 	public function pesquisarAnuncioMarca($searchMarca){
 
-		$query = "SELECT * FROM veiculosanuncios WHERE marca LIKE ? COLLATE utf8_general_ci";
+		//$query = "SELECT * FROM veiculosanuncios WHERE marca LIKE ? COLLATE utf8_general_ci";
+		$query = "SELECT i.id, i.Nome, i.sobrenome, i.cidade, i.uf, v.id, v.descricao, v.titulo, v.marca, v.modelo, v.preco, v.usuarioAnunciante, v.imagemVeiculo, v.estadoVeiculo, v.status FROM usuarios i INNER JOIN veiculosanuncios v ON v.usuarioAnunciante = i.id WHERE v.marca LIKE ?";
 		$stmt = Conexao::getConn()->prepare($query);
 		$stmt->bindValue(1, $searchMarca);
 		$stmt->execute();
@@ -169,7 +170,8 @@ class AnunciosDao extends Conexao{
 
 	public function pesquisarAnuncioTitulo($searchTitulo){
 
-		$query = "SELECT * FROM veiculosanuncios WHERE titulo LIKE ? OR descricao LIKE ? COLLATE utf8_general_ci";
+		//$query = "SELECT * FROM veiculosanuncios WHERE titulo LIKE ? OR descricao LIKE ? COLLATE utf8_general_ci";
+		$query = "SELECT i.id, i.Nome, i.sobrenome, i.cidade, i.uf, v.id, v.descricao, v.titulo, v.marca, v.modelo, v.preco, v.usuarioAnunciante, v.imagemVeiculo, v.estadoVeiculo, v.status FROM usuarios i INNER JOIN veiculosanuncios v ON v.usuarioAnunciante = i.id WHERE v.titulo LIKE ? OR v.descricao LIKE ? COLLATE utf8_general_ci";
 		$stmt = Conexao::getConn()->prepare($query);
 		$stmt->bindValue(1, "%{$searchTitulo}%");
 		$stmt->bindValue(2, "%{$searchTitulo}%");
