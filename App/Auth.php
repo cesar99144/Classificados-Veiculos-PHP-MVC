@@ -30,18 +30,18 @@ class Auth{
               
            	  header('Location: /anuncios/perfil');
            else:
-           	  echo "<script>alert('Senha invalida')</script>";
+           	  return "Senha invalida";
            endif;
 
      	else:
-     	  echo "<script>alert('Email não encontrado')</script>";
+     	  return "Email não encontrado";
      	endif;
     }
 
     public function logout(){
 
         session_destroy();
-        header('Location: /usuarios/login');
+        header('Location: /veiculos/home');
     }
 
     //Impede que algumas páginas do software sejam acessadas sem o usuário está logado
