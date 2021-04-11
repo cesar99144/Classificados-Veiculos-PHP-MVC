@@ -23,8 +23,9 @@
                      <div class="profile-header-info">
                         <h4 class="m-t-10 m-b-5"><?php echo $_SESSION['userNome'].' '.$_SESSION['userSobreNome']; ?></h4>
                         <p class="m-b-10"><?php echo $_SESSION['userCidade'].', '.$_SESSION['userEstado']; ?></p>
-                        <p class="m-b-10">Cadastro realizado: <?php echo $_SESSION['userDataCadastro']. ' | '.$_SESSION['userEmail']; ?></p>
-                        <a href="#" class="btn btn-sm btn-info mb-2">Editar perfil</a>
+                        <p class="m-b-10">Cadastro realizado: <?php echo $_SESSION['userDataCadastro']; ?></p>
+                        <p class="m-b-10">Contatos: <?php echo $_SESSION['userEmail']; echo " | "; echo $_SESSION['userTelefone']; ?></p>
+                       
                      </div>
                      <!-- END profile-header-info -->
                   </div>
@@ -41,22 +42,38 @@
             <div class="row">
               <?php foreach($data['anunciosUser'] as $anuncios): ?>
                 <div class="card">
-                  <img class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
+                <div id="infoAnunciante">
+                  <?php if($anuncios['status'] == 'Aberto'): ?>
+                    <div id="statusAnuncio">
+                        <?php echo "aberto"; ?>
+                    </div>
+                  <?php elseif($anuncios['status'] == 'Desativado'): ?>
+                    <div id="erroStatus">
+                        <?php echo "Fechado"; ?>
+                    </div>
+                  <?php endif; ?>
+                    <div id="cidadeAnunciante">
+                       
+                    </div>
+                </div>
+                <img id="imgCapa" class="card-img-top" src="<?php echo URL_BASE; ?>uploads/<?php echo $anuncios['imagemVeiculo']; ?>" alt="Card image">
                     <div class="card-body">
-                        <label id="valor" for="">R$ <?php echo $anuncios['preco']; ?></label>
+                        <label id="valor" for="">R$ <?php $valor = $anuncios['preco']; echo number_format($valor,2,",","."); ?></label>
                         <h4 class="card-title"><?php echo $anuncios['titulo']; ?></h4>
                         <p class="card-text"><?php echo $anuncios['descricao']; ?></p>
-                        <!--<label for=""><i class="fas fa-tachometer-alt"></i><?php echo $anuncios['km']; ?> km</label>-->
-                        <label for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label>
-                        <label for=""><i class="fab fa-bandcamp"></i> <?php echo $anuncios['modelo']; ?></label>
-                        <label for=""><i class="fas fa-exclamation-triangle"></i> Usado</label><br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                        <?php if($anuncios['status'] == 'Aberto'): ?>
-                            <a id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/bloquearAnuncio/<?php echo $anuncios['id']; ?>" ><i class="fas fa-minus-square"></i> Desabilitar</a>
-                        <?php elseif($anuncios['status'] == 'Desativado'): ?>
-                            <a id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/liberarAnuncio/<?php echo $anuncios['id']; ?>" ><i class="fas fa-vote-yea"></i> Habilitar</a>
-                       
-                        <?php endif; ?>
+                        <!--<label for=""><i class="fas fa-tachometer-alt"></i><?php echo $anuncios['km']; ?>km</label>-->
+                        <label class="atributos" for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label><br>
+                        <label class="atributos" for=""><i class="fab fa-bandcamp"></i> <?php echo $anuncios['modelo']; ?></label><br>
+                        <label class="atributos" for=""><i class="fas fa-exclamation-triangle"></i> Usado</label><br>
+                        <div id="buttonCar">
+                              
+                              <?php if($anuncios['status'] == 'Aberto'): ?>
+                                 <a class="btn btn-danger text-white" id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/bloquearAnuncio/<?php echo $anuncios['id']; ?>" ><i class="fas fa-minus-square"></i> Desabilitar</a>
+                              <?php elseif($anuncios['status'] == 'Desativado'): ?>
+                                 <a class="btn btn-success text-white" id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/liberarAnuncio/<?php echo $anuncios['id']; ?>" ><i class="fas fa-vote-yea"></i> Habilitar</a>
+                           
+                              <?php endif; ?>
+                        </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
