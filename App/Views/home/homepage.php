@@ -37,35 +37,7 @@
    
    <div class="wrapper">
 
-      <div class="sidebar">
-         <!-- Sidebar  -->
-        <nav id="sidebar">
-
-            <div id="dismiss">
-                <i class="fa fa-arrow-left"></i>
-            </div>
-
-            <ul class="list-unstyled components">
-                
-                <li class="active">
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#why_choose_us">why Choose Us</a>
-                </li>
-                <li>
-                    <a href="#testimonial">Testimonial</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-
-        </nav>
-      </div>
+      
 
 
       <div id="content">
@@ -96,9 +68,7 @@
                         <li><a href="#contact">Contatos</a></li>
                        
                          <li>
-                           <button type="button" id="sidebarCollapse">
-                              <img src="<?php echo URL_BASE; ?>Resource/images/menu_icon.png" alt="#" />
-                           </button>
+                          
                         </li>
                      </ul>
                   </div>
@@ -122,11 +92,26 @@
                   </div>
                </div>
                <div class="col-md-7">
-                 <div style="margin-left: 270px;" class="full slider_cont_section">
-                     <h4>Welcome</h4>
-                      <div class="button_section">
-                        <a id="buttonBusca" href="#">Buscar veículo</a>
-                     </div>
+                 <div id="home-busca" class="full slider_cont_section">
+                     <form id="busca-form" action="<?php echo URL_BASE; ?>anuncios/pesquisar" method="POST">
+                       <div id="tituloFormulario">
+                           <br><br><h4 id="titulo-form">Buscar por anúncio</h4>
+                       </div>
+                       <div id="select-formulario">
+                           <select id="marcasBusca" name="marcasBusca" class="select-formulario">
+                              <option onselect="">Marcas...</option>
+                              <?php foreach($data['marcas'] as $marcas): ?>
+                                    <option value="<?php echo $marcas['marca']; ?>"><?php echo $marcas['marca']; ?></option>
+                              <?php endforeach; ?>
+                           </select>
+                       </div>
+                       <div id="palavra-formulario">
+                         <input class="input-formulario" type="search" id="palavraBusca" name="tituloBusca" placeholder="Buscar por palavra chave">
+                       </div>
+                       <div id="button-form">
+                          <input type="submit" id="submit-Form" class="buttonsCenter" value="Buscar">
+                       </div>
+                     </form>
                   </div>
                </div>
             </div>
@@ -150,7 +135,7 @@
                   <p class="large">Anuncie aqui para milhares de compradores e venda rápido</p>
                </div>
                <div class="full button_section margin_top_30">
-                        <a class="buttonsCenter" href="#">Ler mais</a>
+                        <a id="anuncieLerMais" class="buttonsCenter" href="#">Ler mais</a>
                      </div>
             </div>
 
@@ -184,7 +169,7 @@
                   <p class="large">Nosso portal conta com uma grande variedade de veículos das melhores e mais diversas marcas</p>
                </div>
                <div class="full button_section margin_top_30">
-                    <a href="#">Ler mais</a>
+                    <a id="anuncieLerMais" href="#">Ler mais</a>
                   </div>
             </div>
 
@@ -266,24 +251,20 @@
                                 
                               </div>
                               <div class="full testimonial_cont text_align_center">
-                                <p><strong>Juliana</strong><br><strong class="ornage_color">Rental</strong><br><i>"Venho aqui expressar como estou satisfeita com o carro que adquiri nessa renomado site, carro com excelente procedência, bem transparente durante todo o processo de aquisição do veículo"</i></p>
+                                <p><strong>Juliana</strong><br><strong class="ornage_color"></strong><br><i>"Venho aqui expressar como estou satisfeita com o carro que adquiri nessa renomado site, carro com excelente procedência, bem transparente durante todo o processo de aquisição do veículo"</i></p>
                                 <div class="full text_align_center margin_top_30">
-                                   <img src="images/testimonial_qoute.png">
+                                   <img src="<?php echo URL_BASE; ?>Resource/images/testimonial_qoute.png">
                                 </div>
                               </div>
                             </div> 
                         </div>
-
-                        <div class="carousel-item">
+                        <br>
+                        <div class="carousel-item active">
 
                            <div class="testomonial_section">
-                              <div class="full center">
-                                <div class="client_img">
-                                  <img src="images/testimonial.png" alt="#" />
-                                </div>
-                              </div>
+                              
                               <div class="full testimonial_cont text_align_center">
-                                <p><strong>Due markes</strong><br><strong class="ornage_color">Rental</strong><br><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i></p>
+                                <p><strong>Ricardo</strong><br><strong class="ornage_color"></strong><br><i>Meu primeiro carro que compro pelo o site e posso afirmar que fiz uma excelente escolha, muito prestativo, certeza que quando trocar por outro carro vou buscar aqui novamente!</i></p>
                                 <div class="full text_align_center margin_top_30">
                                    <img src="<?php echo URL_BASE; ?>Resource/images/testimonial_qoute.png">
                                 </div>

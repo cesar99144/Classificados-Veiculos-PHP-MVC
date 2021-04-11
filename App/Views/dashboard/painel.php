@@ -25,7 +25,7 @@
 					  <!-- Se tiver logado opções são liberadas -->
 					  <?php if(isset($_SESSION['logado'])): ?>
 			  		 	<li><i class="far fa-id-badge"></i><a class="textLink" href="<?php echo URL_BASE; ?>anuncios/perfil">Meu perfil</a></li>
-						<li><i class="fas fa-bookmark"></i><a class="textLink" href="">Favoritos</a></li>
+						<li><i class="fas fa-bookmark"></i><a class="textLink" href="<?php echo URL_BASE; ?>anuncios/favoritos">Favoritos</a></li>
 						<li><i class="fas fa-plus"></i><a class="textLink" href="<?php echo URL_BASE; ?>anuncios/criarAnuncio">Criar anúncio</a></li>
 					  <?php endif; ?>
 			  		  <li><i class="fas fa-phone-volume"></i><a class="textLink" href="">Contatos</a></li>

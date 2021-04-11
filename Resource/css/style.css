@@ -1723,6 +1723,16 @@ a#buttonLogin{
 	text-align: center;
 }
 
+a#buttonSignup{
+
+	text-align: center;
+}
+
+a#anuncieLerMais{
+
+	text-align: center;
+	
+}
 a#buttonBusca{
 
 	background: green;
@@ -2294,8 +2304,75 @@ h2#escolher{
 	padding: 10px;
 }
 
+div#home-busca{
 
+	margin-left: 160px;
+}
 
+form#busca-form{
+
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 470px;
+	height: 430px;
+	text-align: center;
+}
+
+div#tituloFormulario{
+
+	
+}
+
+h4#titulo-form{
+
+	font-size: 17pt;
+}
+
+div#select-formulario{
+
+	margin-top: 40px;
+}
+
+select#marcasBusca{
+
+	width: 350px;
+	font-size: 12pt;
+	padding: 10px;
+	border: none;
+	background: white;
+	border-radius: 10px;
+}
+
+div#palavra-formulario{
+
+	margin-top: 30px;
+}
+
+input#palavraBusca{
+
+	width: 350px;
+	font-size: 11pt;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	
+}
+
+div#button-form{
+
+	margin-top: 30px;
+}
+
+input#submit-Form{
+
+	width: 350px;
+	font-size: 12pt;
+	padding: 10px;
+	border: 1px solid white;
+	background: #008080;
+	border-radius: 20px;
+	color: white;
+	font-weight: bold;
+}
 
 
 
