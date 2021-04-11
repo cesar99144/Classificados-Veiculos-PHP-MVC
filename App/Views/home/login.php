@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo URL_BASE; ?>Resource/css/login.css">
-    <title>Document</title>
+    <title>Login - classificados</title>
 </head>
 <body>
 <section class="sign-in">
@@ -18,6 +18,17 @@
                     </div>
 
                     <div class="signin-form">
+                        <?php 
+                          //Exibe mensagens de validação para o usuário
+                          if(!empty($data['mensagem'])):
+
+                            foreach($data['mensagem'] as $m):
+                                echo "<div id='valida'>".$m."</div>"."<br>";
+                            endforeach;
+
+                          endif;
+
+                        ?><br>
                         <h2 class="form-title">Login</h2>
                         <form action="<?php echo URL_BASE; ?>usuarios/login" method="POST" class="register-form" id="login-form">
                             <div class="form-group">
@@ -35,6 +46,8 @@
                         </form>
                         
                     </div>
+
+
                 </div>
             </div>
         </section>

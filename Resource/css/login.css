@@ -456,7 +456,10 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   
   .signin-content {
     padding-top: 67px;
-    padding-bottom: 87px; }
+    padding-bottom: 87px; 
+    margin-top: 60px;
+
+  }
   
   .social-login {
     align-items: center;
@@ -595,3 +598,10 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   
   /*# sourceMappingURL=style.css.map */
   
+  div#valida{
+
+    background: red;
+    padding: 5px;
+    text-align: center;
+    color: white;
+  }
