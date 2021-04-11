@@ -200,7 +200,7 @@
            <div class="row">
              <div class="col-md-12">
                <div class="full center">
-                 <h2 class="heading_main orange_heading">Porque escolher-nos</h2>
+                  <h2 class="heading_main orange_heading">Benefícios</h2>
                </div>
              </div>
            </div>
