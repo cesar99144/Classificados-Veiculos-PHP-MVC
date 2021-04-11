@@ -21,6 +21,7 @@ class Usuarios extends Controller{
 			$usuarios->setEmail($_POST['email']);
 			$usuarios->setSenha($senha);
 			$usuarios->setDataCadastro($dataAtual);
+			$usuarios->setTelefone($_POST['telefone']);
 
             $usuariosDao = $this->model('UsuariosDao');
 			$cadastrarUsuario = $usuariosDao->cadastrarUsuario($usuarios);

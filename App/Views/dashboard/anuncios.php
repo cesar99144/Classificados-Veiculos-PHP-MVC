@@ -75,11 +75,13 @@
                     <label class="atributos" for=""><i class="fas fa-exclamation-triangle"></i> Usado</label><br>
                     <div id="buttonCar">
                         <a class="btn btn-primary" href="<?php echo URL_BASE; ?>anuncios/vizualizarVeiculo/<?php echo $anuncios['id']; ?>/<?php echo $anuncios['usuarioAnunciante']; ?>">Detalhes</a>
-                        <?php if($_SESSION['userId'] == $anuncios['usuarioAnunciante']): ?>
-
-                        <?php else: ?>
-                            <a id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/cadastrarFavoritos/<?php echo $anuncios['id']; ?>" ><i class="fas fa-bookmark"></i> Favoritar</a>
+                        <!-- Verifica se há uma sessão logada -->
+                        <?php if(isset($_SESSION['logado'])): ?>
+                          
+                                <a id="favoritoButton" href="<?php echo URL_BASE; ?>anuncios/cadastrarFavoritos/<?php echo $anuncios['id']; ?>" ><i class="fas fa-bookmark"></i> Favoritar</a>
+                            
                         <?php endif; ?>
+                        
                         <a id="favoritoButton" onclick="abrirModal('codigo-modal', '<?php echo URL_BASE; echo 'anuncios/vizualizarVeiculo/'; echo $anuncios['id']; echo '/'; echo $anuncios['usuarioAnunciante']; ?>')" href="#" ><i class="fas fa-share-square"></i></a>
                     </div>
                 </div>
@@ -105,12 +107,19 @@
 
                         <label id="share-info" for=""> Compartilhe o link: </label><br>
                         <input id="link-Share" name="text"/><br> 
+                        <label id="share-info" for=""> Ou: </label><br>
                         <button type="submit" id="linkwhats"  name="enviar" type="submit"><i class="fab fa-whatsapp"> whatsapp</i></button>
                         
                     </form>
                 </div>
                 <div class="modal-butoes">
-                    <button class="btn" onclick="fecharModal('codigo-modal')">Cancelar</button>
+                    <div>
+                    
+                    </div>
+                    <div>
+                        <button id="buttonClose" class="btn" onclick="fecharModal('codigo-modal')">Cancelar</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -47,6 +47,10 @@
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="senha" id="senha" placeholder="Senha"/>
                         </div>
+                        <div class="form-group">
+                            <label for="telefone"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="number" name="telefone" id="telefone" placeholder="Telefone"/>
+                        </div>
                        
                         <div class="form-group form-button">
                             <input type="submit" name="signup" id="signup" class="form-submit" value="Cadastrar"/>

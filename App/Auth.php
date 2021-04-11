@@ -27,6 +27,7 @@ class Auth{
               $_SESSION['userCidade'] = $resultado['cidade'];
               $_SESSION['userEstado'] = $resultado['uf'];
               $_SESSION['userDataCadastro'] = $resultado['dataCadastro'];
+              $_SESSION['userTelefone'] = $resultado['telefone'];
               
            	  header('Location: /anuncios/perfil');
            else:

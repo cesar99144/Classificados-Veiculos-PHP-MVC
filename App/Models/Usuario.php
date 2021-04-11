@@ -4,7 +4,7 @@ use App\Core\Conexao;
 
 class Usuario extends Conexao{
 
- 	private $nome, $sobrenome, $cidade, $uf, $email, $senha, $dataCadastro;
+ 	private $nome, $sobrenome, $cidade, $uf, $email, $senha, $dataCadastro, $telefone;
 
  	public function getNome(){
 
@@ -70,6 +70,15 @@ class Usuario extends Conexao{
  	
  	public function setDataCadastro($dataCadastro){
  		$this->dataCadastro = $dataCadastro;
+ 	
+ 	}
+
+ 	public function getTelefone(){
+ 		return $this->telefone;
+ 	}
+ 	
+ 	public function setTelefone($t){
+ 		$this->telefone = $t;
  	
  	}
 

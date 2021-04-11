@@ -6,7 +6,7 @@ class UsuariosDao extends Conexao{
 
 	function cadastrarUsuario(Usuario $u){
 
-		$query = "INSERT INTO usuarios (nome, sobrenome, cidade, uf, email, senha, dataCadastro) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$query = "INSERT INTO usuarios (nome, sobrenome, cidade, uf, email, senha, dataCadastro, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		$stmt = Conexao::getConn()->prepare($query);
 		$stmt->bindValue(1, $u->getNome());
 		$stmt->bindValue(2, $u->getSobrenome());
@@ -15,6 +15,7 @@ class UsuariosDao extends Conexao{
 		$stmt->bindValue(5, $u->getEmail());
 		$stmt->bindValue(6, $u->getSenha());
 		$stmt->bindValue(7, $u->getDataCadastro());
+		$stmt->bindValue(8, $u->getTelefone());
 
 		if($stmt->execute()):
 
