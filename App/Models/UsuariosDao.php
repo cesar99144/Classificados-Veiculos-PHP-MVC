@@ -47,4 +47,23 @@ class UsuariosDao extends Conexao{
 
      	endif;
 	}
+
+	public function listarCidades(){
+
+		$query = "SELECT DISTINCT cidade FROM usuarios order by cidade";
+		$stmt = Conexao::getConn()->prepare($query);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+			return $resultado;
+
+     	else:
+     		
+     		return [];
+
+     	endif;
+	}
 }
