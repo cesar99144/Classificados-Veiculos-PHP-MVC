@@ -17,6 +17,8 @@
         $pagination = new App\Pagination($data['anuncios'], isset($_GET['page'])? $_GET['page'] : 1, 8);
     ?>
 
+    <h4>Favoritos: </h4>
+
     <?php
 
         //Mensagem de retorno caso não haja nenhum livro
@@ -27,6 +29,8 @@
         endif;
 
     ?>
+
+    
     <div class="row ">
     
         <?php foreach($pagination->resultado() as $anuncios): ?>

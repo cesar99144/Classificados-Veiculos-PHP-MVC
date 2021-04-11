@@ -24,7 +24,9 @@
                      <div class="profile-header-info">
                         <h4 class="m-t-10 m-b-5"><?php echo $usuario['nome'].' '.$usuario['sobrenome']; ?></h4>
                         <p class="m-b-10"><?php echo $usuario['cidade'].', '. $usuario['uf']; ?></p>
-                        <p class="m-b-10">Cadastro realizado: <?php echo $usuario['dataCadastro']. ' | '.$usuario['email']; ?></p>
+                        <p class="m-b-10">Cadastro realizado: <?php echo $usuario['dataCadastro']; ?>
+                        <p class="m-b-10">Contatos: <?php echo $usuario['email']; echo ' | '; echo $usuario['telefone']; ?>
+                        
                         
                      </div>
                         <?php endforeach; ?>
@@ -34,7 +36,7 @@
                   <!-- BEGIN profile-header-tab -->
                   <ul class="profile-header-tab nav nav-tabs">
                      <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">Anúncios</a></li>
-                     <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">Telefone</a></li>
+                     
                      
                   </ul>
                   <!-- END profile-header-tab -->

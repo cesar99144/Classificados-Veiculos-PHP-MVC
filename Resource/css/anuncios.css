@@ -32,7 +32,17 @@ div#erroStatus{
     padding: 5px;
     width: 90px;
     text-align: center;
+    color: white;
     
+}
+
+div#statusAnuncio{
+
+    background: green;
+    padding: 5px;
+    width: 90px;
+    text-align: center;
+    color: white;
 }
 
 .card-img-top{
@@ -128,15 +138,17 @@ a#favoritoButton{
     width: 100vw;
     height: 100vh;
     display: none;
+    
 }
 
 .modal-conteudo {
     margin: 0 auto;
     margin-top: 3%;
     max-width: 600px;
-    background-color: #eee;
+    background-color: white;
     padding: 0;
     box-shadow: 0 0 2px #fff;
+    
 }
 
 .modal-titulo h1{
@@ -159,11 +171,22 @@ a#favoritoButton{
 
 .modal-butoes{
     background-color: #eee;
+    display: flex;
+    justify-content: space-between;
 }
 
-a#linkwhats{
+label#share-info{
 
     font-size: 17pt;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button#linkwhats{
+
+    font-size: 17pt;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 label#share-info{
@@ -176,3 +199,9 @@ input#link-Share{
     width: 450px;
 }
 
+button#buttonClose{
+
+    background: red;
+    color: white;
+    margin-left: 390px;
+}
