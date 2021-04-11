@@ -42,32 +42,7 @@
 			</div>
 			
 		</div>
-		<div id="topoPesquisa">
-			<div class="colunaTop">
-				
-			</div>
-			<div class="colunaPesquisa">
-			  <form>
-			  	<select class="select-formulario">
-			  		<option onselect="">Localização...</option>
-			  		<option>Teste</option>
-			  		<option>Teste</option>
-			  	</select>
-                <select class="select-formulario">
-			  		<option onselect="">Marcas...</option>
-			  		<option>Teste</option>
-			  		<option>Teste</option>
-			  	</select>
-			  	<input class="input-formulario" type="search" name="" placeholder="Buscar por palavra chave">
-			  	<button id="input-submit" type="submit" name=""><i class="fas fa-search"></i></button>
-			  </form>
-			</div>
-			<div class="colunaTop">
-			<?php if(isset($_SESSION['logado'])): ?>
-				<a id="button-criarAnuncio" href="#">Criar anúncio</a>
-			<?php endif; ?>
-			</div>
-		</div>
+		
 	</header>
     <section id="conteudo">
         <?php require_once 'App/Views/'.$view.'.php'; ?>

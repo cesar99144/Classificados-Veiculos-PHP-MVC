@@ -127,4 +127,64 @@ class AnunciosDao extends Conexao{
 	   endif;
 	}
 
+	public function listarMarcas(){
+
+		$query = "SELECT DISTINCT marca FROM veiculosanuncios";
+		$stmt = Conexao::getConn()->prepare($query);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+			return $resultado;
+
+     	else:
+     		
+     		return [];
+
+     	endif;
+	}
+
+	public function pesquisarAnuncioMarca($searchMarca){
+
+		$query = "SELECT * FROM veiculosanuncios WHERE marca LIKE ? COLLATE utf8_general_ci";
+		$stmt = Conexao::getConn()->prepare($query);
+		$stmt->bindValue(1, $searchMarca);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+			return $resultado;
+
+     	else:
+     		
+     		return [];
+
+     	endif;
+	}
+
+	public function pesquisarAnuncioTitulo($searchTitulo){
+
+		$query = "SELECT * FROM veiculosanuncios WHERE titulo LIKE ? OR descricao LIKE ? COLLATE utf8_general_ci";
+		$stmt = Conexao::getConn()->prepare($query);
+		$stmt->bindValue(1, "%{$searchTitulo}%");
+		$stmt->bindValue(2, "%{$searchTitulo}%");
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+			return $resultado;
+
+     	else:
+     		
+     		return [];
+
+     	endif;
+	}
+
 }

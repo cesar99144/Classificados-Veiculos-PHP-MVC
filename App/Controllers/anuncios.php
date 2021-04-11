@@ -11,7 +11,10 @@ class Anuncios extends Controller{
         $veiculosDao = $this->model('AnunciosDao');
         $listaAnuncios = $veiculosDao->listarTodosAnuncios();
 
-        $this->viewDash('dashboard/anuncios', $dados = ['anuncios' => $listaAnuncios]);
+        //Carrega todas as  marcas
+        $listaMarcas = $veiculosDao->listarMarcas();
+
+        $this->viewDash('dashboard/anuncios', $dados = ['anuncios' => $listaAnuncios, 'marcas' => $listaMarcas]);
     }
 
     public function perfil(){
@@ -120,5 +123,31 @@ class Anuncios extends Controller{
 
 		$veiculosDao = $this->model('AnunciosDao');
         $bloquear = $veiculosDao->BloquearAnuncio($idAnuncio);
+	}
+
+	public function pesquisar(){
+
+		if(isset($_POST['marcasBusca']) && isset($_POST['tituloBusca'])):
+
+			$veiculosDao = $this->model('AnunciosDao');
+
+			//Verifica se o usuário digitou algo na busca
+			if(empty($_POST['tituloBusca'])):
+
+				$resultadoBusca = $veiculosDao->pesquisarAnuncioMarca($_POST['marcasBusca']);
+
+		        //Carrega todas as  marcas
+		        $listaMarcas = $veiculosDao->listarMarcas();
+		    
+		    else:
+		    	
+		    	$resultadoBusca = $veiculosDao->pesquisarAnuncioTitulo($_POST['tituloBusca']);
+		    	//Carrega todas as  marcas
+		        $listaMarcas = $veiculosDao->listarMarcas();
+
+	   		 endif;
+
+	   		 $this->viewDash('dashboard/anuncios', $dados = ['anuncios' => $resultadoBusca, 'marcas' => $listaMarcas]);
+		endif;
 	}
 }
