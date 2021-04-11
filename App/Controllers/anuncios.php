@@ -150,4 +150,32 @@ class Anuncios extends Controller{
 	   		 $this->viewDash('dashboard/anuncios', $dados = ['anuncios' => $resultadoBusca, 'marcas' => $listaMarcas]);
 		endif;
 	}
+
+	public function favoritos(){
+
+		$favoritosDao = $this->model('FavoritosDao');
+		$listarFavoritos = $favoritosDao->listarFavoritosDoUsuarioLogado($_SESSION['userId']);
+
+		$this->viewDash('dashboard/favoritos', $dados = ['anuncios' => $listarFavoritos]);
+	}
+
+	public function cadastrarFavoritos($idPostagem){
+
+		$favoritos = $this->model('Favoritos');
+		
+		$favoritos->setIdUsuario($_SESSION['userId']);
+		$favoritos->setIdPostagem($idPostagem);
+
+		$favoritosDao = $this->model('FavoritosDao');
+		$incluirFavorito = $favoritosDao->cadastrar($favoritos);
+
+	}
+
+	public function removerFavorito($idFavorito){
+
+		$favoritosDao = $this->model('FavoritosDao');
+		$removerAnuncio = $favoritosDao->removerAnuncio($idFavorito);
+	}
+
+
 }
