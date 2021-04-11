@@ -32,10 +32,20 @@ class Usuarios extends Controller{
 
     public function login(){
 		
+		$mensagem = array();
 
         if(isset($_POST['userEmail']) && isset($_POST['userSenha'])):
 
-			Auth::login($_POST['userEmail'], $_POST['userSenha']);
+
+			$mensagem[] = Auth::login($_POST['userEmail'], $_POST['userSenha']);
+
+			$this->view('home/login', $dados = ['mensagem' => $mensagem]);
+
+		/*else: 
+
+			$mensagem[] = "Preencha os campos";
+
+			$this->view('home/login', $dados = ['mensagem' => $mensagem]);*/
 
 		endif;
 
