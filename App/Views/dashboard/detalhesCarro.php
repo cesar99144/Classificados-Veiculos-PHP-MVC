@@ -34,6 +34,7 @@
                   <!-- BEGIN profile-header-tab -->
                   <ul class="profile-header-tab nav nav-tabs">
                      <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">Anúncios</a></li>
+                     <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">Telefone</a></li>
                      
                   </ul>
                   <!-- END profile-header-tab -->

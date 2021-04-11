@@ -28,30 +28,31 @@
       <label for="inputCity">Marca</label>
       <input type="text" class="form-control" id="marca" name="marca">
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label for="inputCEP">Preço de venda:</label>
-      <input type="text" class="form-control" id="preco" name="preco">
+      <input type="text" class="form-control" id="preco" onchange="mascaraDinheiro()" name="preco">
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
         <select id="estadoVeiculo" name="estadoVeiculo" class="form-control">
             <option selected>Escolher...</option>
             <option>Usado</option>
             <option>Novo</option>
         </select>
     </div>
-    <div class="form-group col-md-2">
-        <span>Imagem</span><br>
-        <input type="file" name="foo" id="upload" onchange="previewImagem()" value="" required><br>
-    </div>
+    
   </div>
  
 </div>
     <div class="form-row">
-        <div class="form-group col-md-6">
-        <img id="preview-img"><br>
+        <div class="form-group col-md-3">
+            <span>Imagem do veículo</span><br>
+            <input type="file" name="foo" id="upload" onchange="previewImagem()" value="" required><br>
         </div>
         <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <img id="preview-img"><br>
+        </div>
+        <div class="form-group col-md-10">
+            <button type="submit" class="btn btn-primary">Criar anúncio</button>
         </div>
     </div>
 </form>
