@@ -53,7 +53,8 @@ class AnunciosDao extends Conexao{
 
 	public function listarTodosAnuncios(){
 
-		$query = "SELECT * FROM veiculosAnuncios WHERE status = ?";
+		//$query = "SELECT * FROM veiculosAnuncios WHERE status = ?";
+		$query = "SELECT i.id, i.Nome, i.sobrenome, i.cidade, i.uf, v.id, v.descricao, v.titulo, v.marca, v.modelo, v.preco, v.usuarioAnunciante, v.imagemVeiculo, v.estadoVeiculo, v.status FROM usuarios i INNER JOIN veiculosanuncios v ON v.usuarioAnunciante = i.id WHERE v.status = 'Aberto';";
 		$stmt = Conexao::getConn()->prepare($query);
 		$stmt->bindValue(1, 'Aberto');
 		$stmt->execute();

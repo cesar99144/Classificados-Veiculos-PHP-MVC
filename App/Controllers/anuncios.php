@@ -10,7 +10,7 @@ class Anuncios extends Controller{
 
         $veiculosDao = $this->model('AnunciosDao');
         $listaAnuncios = $veiculosDao->listarTodosAnuncios();
-
+		
         //Carrega todas as  marcas
         $listaMarcas = $veiculosDao->listarMarcas();
 
