@@ -10,7 +10,29 @@
     
 </head>
 <body>
-
+    <div id="topoPesquisa">
+            <div class="colunaTop">
+                
+            </div>
+            <div class="colunaPesquisa">
+              <form action="<?php echo URL_BASE; ?>anuncios/pesquisar" method="POST">
+                
+                <select name="marcasBusca" class="select-formulario">
+                    <option onselect="">Marcas...</option>
+                    <?php foreach($data['marcas'] as $marcas): ?>
+                        <option value="<?php echo $marcas['marca']; ?>"><?php echo $marcas['marca']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <input class="input-formulario" type="search" name="tituloBusca" placeholder="Buscar por palavra chave">
+                <button id="input-submit" type="submit" name=""><i class="fas fa-search"></i></button>
+              </form>
+            </div>
+            <div class="colunaTop">
+            <?php if(isset($_SESSION['logado'])): ?>
+                <a id="button-criarAnuncio" href="#">Criar anúncio</a>
+            <?php endif; ?>
+            </div>
+        </div>
     <?php 
 
        //Paginação
@@ -22,7 +44,7 @@
         //Mensagem de retorno caso não haja nenhum livro
         if(empty($pagination->resultado())):
 
-          echo "<label id='textoMensagem'>Nenhum livro encontrado</label>";
+          echo "<label id='textoMensagem'>Nenhum anúncio encontrado</label>";
 
         endif;
 
@@ -37,11 +59,13 @@
                     <h4 class="card-title"><?php echo $anuncios['titulo']; ?></h4>
                     <p class="card-text"><?php echo $anuncios['descricao']; ?></p>
                     <!--<label for=""><i class="fas fa-tachometer-alt"></i><?php echo $anuncios['km']; ?>km</label>-->
-                    <label class="atributos" for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label>
-                    <label class="atributos" for=""><i class="fab fa-bandcamp"></i> <?php echo $anuncios['modelo']; ?></label>
+                    <label class="atributos" for=""><i class="fas fa-copyright"></i> <?php echo $anuncios['marca']; ?></label><br>
+                    <label class="atributos" for=""><i class="fab fa-bandcamp"></i> <?php echo $anuncios['modelo']; ?></label><br>
                     <label class="atributos" for=""><i class="fas fa-exclamation-triangle"></i> Usado</label><br>
-                    <a class="btn btn-primary" href="<?php echo URL_BASE; ?>anuncios/vizualizarVeiculo/<?php echo $anuncios['id']; ?>/<?php echo $anuncios['usuarioAnunciante']; ?>">Detalhes</a>
-                    <a id="favoritoButton" href="#" ><i class="fas fa-bookmark"></i> Favoritar</a>
+                    <div id="buttonCar">
+                        <a class="btn btn-primary" href="<?php echo URL_BASE; ?>anuncios/vizualizarVeiculo/<?php echo $anuncios['id']; ?>/<?php echo $anuncios['usuarioAnunciante']; ?>">Detalhes</a>
+                        <a id="favoritoButton" href="#" ><i class="fas fa-bookmark"></i> Favoritar</a>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
