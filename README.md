@@ -14,3 +14,4 @@
 </ul>
 
 <img src="Resource/imagensWeb/homePage.gif">
+<img src="Resource/imagensWeb/dashboard.gif">
