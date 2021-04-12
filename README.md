@@ -1,5 +1,5 @@
 # Classificados-Veiculos-PHP-MVC
- Site de classificados para veículos. Onde pessoas podem anunciar, vender e buscar veículos
+ 
 
  <p>Instalação</p>
 
