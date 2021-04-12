@@ -1,5 +1,7 @@
 # Classificados-Veiculos-PHP-MVC
- Site de classificados para veículos. Onde pessoas podem anunciar, vender e buscar veículos
+ Site de classificados para veículos. Onde pessoas podem anunciar, vender e buscar veículos.
+ 
+ <p>Foi utilizado: PHP 7.4, mysql 8.0.21, bootstrap 4.1.0, mvc e rotas. 
 
  <p>Instalação</p>
 
