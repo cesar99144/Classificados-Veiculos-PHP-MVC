@@ -5,7 +5,7 @@
 
  <ul>
     <li>Clonar este repositório</li>
-    <li>Importar o arquivo sql que encontra se no caminho: "vendasveiculos.sql" para o seu mysql</li>
+    <li>Importar o arquivo sql que encontra se no caminho: "database/vendasveiculos.sql" para o seu mysql</li>
     <li>Ajustar os dados de conexão do arquivo <strong>Conexao.php</strong> que se encontra na pasta App/core, para os parâmetros do seu servidor</li>
     <li>Para mais praticidade na instalação e melhor utilização, indico utilizar o servidor embutido do php</li>
     <li>Caso utilize algum outro servidor (xampp ou wamp por exemplo), devido ao sistema de rotas será necessário criar um virtual host para executar o projeto </li>
