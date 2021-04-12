@@ -13,4 +13,4 @@
     <li>A aplicação tem que ser executada na porta 8080, mas caso queira utilizar outra porta é necessário modificar o <strong>URL_BASE do arquivo</strong> na raiz <strong>index.php</strong> e colocar a porta que você deseja executar</li>
 </ul>
 
-<img src="Resource/imagensWeb/homepage.gif">
+<img src="Resource/imagensWeb/homePage.gif">
