@@ -8,6 +8,7 @@ class Conexao{
 
     public static function getConn(){
 
+        //Verifica se já existe uma instância da conexão antes de retornar
         if(!isset(self::$instance)):
 
             self::$instance = new \PDO('mysql:host=localhost;dbname=vendasveiculos;charset=utf8','root', '12345');
